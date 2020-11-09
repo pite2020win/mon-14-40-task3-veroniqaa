@@ -28,3 +28,90 @@
 #
 #Delete these comments before commit!
 #Good luck.
+
+
+class Student:
+  
+  def __init__ (self, name, surname):
+    self.name = name
+    self.surname = surname
+    self.marks = []
+    self.attendance = []
+  def add_mark(self, mark):
+    self.marks.append(mark)
+  def average_mark(self):
+    return sum(self.marks)/len(self.marks)
+  def check_attendance(self, attendance):
+    self.attendance.append(attendance)
+  def frequency(self):
+    retrun (sum(self.attendance)/len(self.attendance))*100
+
+class Form: 
+
+  def __init__ (self, name):
+    self.form_name = name
+    self.students = []
+  def add_student(self, student):
+    self.students.append(student)
+  def form_average_mark(self):
+    temp = 0.0
+    for s in students_list:
+      temp+=s.average_mark()
+    return temp/len(self.students_list)
+  def form_frequency(self):
+    temp = 0.0
+    for s in students_list:
+      temp+=s.frequency()
+    return temp/len(self.students_list)
+ 
+
+class School:
+
+  def __init__ (self, name):
+    self.school_name = name
+    self.forms = []
+  def add_form (self, form):
+    self.forms.append(form)
+
+if __name__ == "__main__":
+  student1 = Student('Jan', 'Kowalski')
+  student2 = Student('Adam', 'Nowak')
+  student3 = Student('Maria', 'Mazur')
+  student4 = Student('Anna', 'Wisniewska')
+
+  form1 = Form('1A')
+  form2 = Form('1B')
+
+  form1.add_student(student1)
+  form1.add_student(student2)
+  form2.add_student(student3)
+  form2.add_student(student4)
+
+  school1 = School('High School')
+  school1.add_form(form1)
+  school1.add_form(form2)
+
+  student1.add_mark(3.5)
+  student1.add_mark(2)
+  student1.add_mark(5)
+  student2.add_mark(4.5)
+  student2.add_mark(5)
+  student3.add_mark(2)
+  student3.add_mark(5)
+  student3.add_mark(5)
+  student3.add_mark(3.5)
+  student4.add_mark(2)
+  student4.add_mark(5)
+
+  student1.check_attendance(1) 
+  student1.check_attendance(1)
+  student1.check_attendance(1)
+  student2.check_attendance(1) 
+  student2.check_attendance(0)
+  student2.check_attendance(1)
+  student3.check_attendance(0) 
+  student3.check_attendance(0)
+  student3.check_attendance(1)
+  student4.check_attendance(1) 
+  student4.check_attendance(1)
+  student4.check_attendance(0)
